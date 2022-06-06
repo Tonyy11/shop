@@ -1,0 +1,138 @@
+@media (min-width: 390px){
+    body{
+        width: 100%;
+        box-sizing: border-box;
+        margin: 0;
+    } 
+    .bodee{
+        padding: 0px 20px 42px 20px;
+    }
+    #headee{
+        height: 96px;
+        width: 100%;
+        color: white;
+        background-color: #02409D;
+        margin: 0;
+    }
+     .cart-txt{
+        margin: 0;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        padding-top: 61px;
+    }
+    .congrats{
+        font-family: 'Cabinet Grotesk';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 14px;
+        text-align: start;
+        margin-top: 24px;
+    }
+    .box{
+        height: 197;
+        padding: 24px 16px 27px 21px;
+        background: #FFFFFF;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.08);
+        border-radius: 0px 0px 10px 10px;
+    }
+    .inside-box{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .info{
+        text-align: start;
+    }
+    .product-info{
+        font-family: 'Cabinet Grotesk';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+    }
+    .price{
+        font-family: 'Cabinet Grotesk';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        color: #8A8A8E;
+    }
+    .delivery-type{
+        font-family: 'Cabinet Grotesk';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+    }
+    .main-price{
+        font-family: 'Cabinet Grotesk';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 14px;
+        margin: 0;
+        padding-bottom: 63px;
+    }
+    .quantity-box{
+        display: flex;
+        justify-content: end;
+    }
+    .number{
+        border: 1px solid #000000;
+        box-sizing: border-box;
+        border-radius: 10px;
+        width: 106px;
+        height: 33px;
+        text-align: center;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 17px;
+        color: #000000;
+   }
+   .one{
+        font-style: normal;
+        font-weight: 700;
+        font-size: 14px;
+        text-align: center;
+        margin-top: 8px;
+   }
+   .message{
+    font-family: 'Cabinet Grotesk';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    margin-top: 24px;
+    text-align: start;
+   }
+   .delivery-charges{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 49.5px;
+    }
+    .del{
+        display: flex;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+    }
+    .charge{
+        display: flex;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 16px;
+    }
+    .frame3{
+        display: flex;
+        margin-top: 270px;
+        justify-content: center;
+    }
+    .button{
+         background: #02409D;
+         border-radius: 5px;
+         height: 48px;
+    }
+    .proceed{
+        color: #FFFFFF;
+        font-size: 16px;
+        text-align: center;
+    }
+}

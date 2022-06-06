@@ -1,0 +1,154 @@
+@media (min-width: 390px){
+    body{
+        width: 100%;
+        box-sizing: border-box;
+        margin: 0;
+        margin-right: auto;
+        margin-left: auto;
+    }  
+    .bodee{
+        padding: 0px 20px 55px 20px;
+    }
+    .greetings-txt{
+        width: 100%;
+        height: 34px;
+        font-size: 14px;
+        color: #8A8A8E;
+        text-align: start;
+    }
+    .cardtype{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .left{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 16px;
+    }
+    .outer-ellipse{
+        background-color: #ffff;
+        border: 1px solid #000000;
+        box-sizing: border-box;
+        border-radius: 50%;
+        width: 16px;
+        height: 16px;
+    }
+    .inner-ellipse{
+        background-color: #000000;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        margin-left: 2px;
+        margin-top: 2px;
+    }
+    .cardtxt{
+        padding-top: 3px;
+        text-align: start;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+    }
+    .major-info{
+        margin-top: 24px;
+        display: flex;
+        flex-direction: column;
+    }
+    .details{
+        height: 17px;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 14px;
+    }
+    .details-input{
+        height: 48px;
+        border: 1px solid #8A8A8E;
+        box-sizing: border-box;
+    }
+    ::placeholder {
+        color: #8A8A8E;
+        font-size: 14px;
+        text-indent: 16px;
+    }
+    .minor-info{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .minor-details{
+        font-style: normal;
+        font-weight: 700;
+        font-size: 14px;
+        text-align: start;
+    }
+    .minor-input{
+        border: 1px solid #8A8A8E;
+        box-sizing: border-box;
+        width: 166px;
+        height: 48px;
+    }
+    .checkbox-container{
+        display: flex;
+        align-items: center;
+        margin-top: 83px;
+    }
+    .checkbox-container label{
+        display: flex;
+        align-items: center;
+        font-size: 16px;
+        font-weight: 700;
+        height: 34px;
+        text-align: start;
+        cursor: pointer;
+    }
+    .checkbox-container input[type="checkbox"]{
+        cursor: pointer;
+        opacity: 0;
+        position: absolute;
+    }
+    .checkbox-container label::before{
+        content: "";
+        width: 16px;
+        height: 16px;
+        margin-right: 1em;
+        border: .05em solid black;
+        border-radius: .2em;
+    }
+    .checkbox-container input[type="checkbox"]:checked + label::before{
+        content: '\002714';
+        background-color: rgb(7, 7, 7);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+    }
+    .added-txt{
+        width: 307px;
+        height: 34px;
+        margin-left: 30px;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 16px;
+        text-align: start;
+        color: #000000;
+    }
+    .frame3rd{
+        display: flex;
+        margin-top: 101px;
+    }
+    .button{
+         background: #02409D;
+         border-radius: 5px;
+         height: 48px;
+    }
+    .proceed{
+        color: #FFFFFF;
+        font-size: 16px;
+        text-align: center;
+        margin-bottom: 16px;
+    }
+}
