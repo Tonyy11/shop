@@ -120,15 +120,13 @@
         font-weight: 700;
         font-size: 16px;
     }
-    .frame3{
-        display: flex;
+    button{
         margin-top: 270px;
-        justify-content: center;
-    }
-    .button{
-         background: #02409D;
-         border-radius: 5px;
-         height: 48px;
+        width: 100%;
+        background: #02409D;
+        border-radius: 5px;
+        border: none;
+        height: 48px;
     }
     .proceed{
         color: #FFFFFF;
