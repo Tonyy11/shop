@@ -1,8 +1,9 @@
 import React from "react";
 import "./DeliveryPayment.css";
 import visa from "../Assets/visa.svg";
+import { Link } from "react-router-dom";
 
-const Shipping = () => {
+const DeliveryError = () => {
   return (
     <div>
       <div className="headee">
@@ -79,12 +80,14 @@ const Shipping = () => {
           </label>
         </div>
 
-        <button className="proceed" style={{ marginTop: "137px" }}>
-          Confirm
-        </button>
+        <Link to="/shipping">
+          <button className="proceed" style={{ marginTop: "137px" }}>
+            Confirm
+          </button>
+        </Link>
       </div>
     </div>
   );
 };
 
-export default Shipping;
+export default DeliveryError;

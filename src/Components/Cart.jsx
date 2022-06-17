@@ -1,6 +1,7 @@
 import React from "react";
 import "./Cart.css";
 import iphone from "../Assets/iphone.svg";
+import { Link } from "react-router-dom"
 
 const Cart = () => {
   return (
@@ -50,7 +51,9 @@ const Cart = () => {
           </div>
         </div>
 
+        <Link to="/deliverypayment">
         <button className="proceed">Proceed</button>
+        </Link>
       </div>
     </div>
   );

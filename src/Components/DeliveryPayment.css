@@ -6,6 +6,9 @@
         margin-right: auto;
         margin-left: auto;
     }  
+    input:focus{
+        text-indent: 16px;
+    }
     .bodee{
         padding: 0px 20px 55px 20px;
     }

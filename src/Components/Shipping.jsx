@@ -1,7 +1,8 @@
 import React from "react";
 import "./Shipping.css";
+import { Link } from "react-router-dom";
 
-const Delivery = () => {
+const Shipping = () => {
   return (
     <div>
       <div className="headee">
@@ -61,10 +62,12 @@ const Delivery = () => {
           We'll contact you in case anything comes up with your order.
         </p>
 
+        <Link to="/invoice">
         <button className="proceed">Save</button>
+        </Link>
       </div>
     </div>
   );
 };
 
-export default Delivery;
+export default Shipping;

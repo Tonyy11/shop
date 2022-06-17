@@ -2,8 +2,9 @@ import React from "react";
 import { useState } from "react";
 import "./DeliveryPayment.css";
 import visa from "../Assets/visa.svg";
+import { Link } from "react-router-dom"
 
-const Shipping = () => {
+const DeliveryPayment = () => {
   const [state, setState] = useState(true);
 
   function onToggle() {
@@ -125,10 +126,12 @@ const Shipping = () => {
           </p>
         </div>
 
-        <button className="proceed">Confirm</button>
+        <Link to="/deliveryerror">
+          <button className="proceed">Confirm</button>
+        </Link>
       </div>
     </div>
   );
 };
 
-export default Shipping;
+export default DeliveryPayment;
