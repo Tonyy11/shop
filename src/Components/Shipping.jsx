@@ -62,7 +62,7 @@ const Shipping = () => {
 
           <form onSubmit={(e) => handleSubmit(e)}>
             <div className="major-info">
-              <label className="details">First name *</label>
+              <label className="details">First name <span style={{color: "red"}}>*</span></label>
               <input
                 type="text"
                 required
@@ -74,7 +74,7 @@ const Shipping = () => {
             </div>
 
             <div className="major-info">
-              <label className="details">Last name *</label>
+              <label className="details">Last name <span style={{color: "red"}}>*</span></label>
               <input
                 type="text"
                 required
@@ -87,7 +87,7 @@ const Shipping = () => {
 
             <div className="major-info">
               <label className="details" style={{ width: "103px" }}>
-                Street Address *
+                Street Address <span style={{color: "red"}}>*</span>
               </label>
               <input
                 type="text"
@@ -101,7 +101,7 @@ const Shipping = () => {
 
             <div className="minor-info">
               <div>
-                <label className="minor-details">Apt or unit</label>
+                <label className="minor-details">Apt or unit <span style={{color: "red"}}>*</span></label>
                 <input
                   type="text"
                   id="apt"
@@ -113,7 +113,7 @@ const Shipping = () => {
               </div>
 
               <div>
-                <label className="minor-details">City *</label>
+                <label className="minor-details">City <span style={{color: "red"}}>*</span></label>
                 <input
                   type="text"
                   id="city"
@@ -127,7 +127,7 @@ const Shipping = () => {
 
             <div className="minor-info" style={{gap: "30px"}}>
               <div>
-                <label className="minor-details">State *</label>
+                <label className="minor-details">State <span style={{color: "red"}}>*</span></label>
                 <input
                   type="text"
                   id="state"
@@ -139,7 +139,7 @@ const Shipping = () => {
               </div>
 
               <div>
-                <label className="minor-details">Zip code *</label>
+                <label className="minor-details">Zip code <span style={{color: "red"}}>*</span></label>
                 <input
                   type="text"
                   id="zip_code"
@@ -152,9 +152,9 @@ const Shipping = () => {
             </div>
 
             <div className="major-info">
-              <label className="details">Phone number *</label>
+              <label className="details">Phone number <span style={{color: "red"}}>*</span></label>
               <input
-                type="number"
+                type="tel" name="phone" pattern="[0-9]{11}"
                 required
                 id="phone_number"
                 value={data.phone_number}
@@ -175,7 +175,7 @@ const Shipping = () => {
               className="proceed"
               disabled={!data}
             >
-              Save
+              Next
             </button>
           </form>
         </div>

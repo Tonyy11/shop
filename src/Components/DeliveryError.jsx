@@ -34,6 +34,7 @@ const DeliveryError = () => {
             className="details-input"
             type="text"
             placeholder="Aubrey Graham"
+            disabled
           />
         </div>
 
@@ -45,18 +46,19 @@ const DeliveryError = () => {
             className="details-input"
             type="text"
             placeholder="**** **** ***** ****"
+            disabled
           />
         </div>
 
         <div className="minor-info">
           <div>
             <p className="minor-details">Expiration date</p>
-            <input className="minor-input" type="text" />
+            <input disabled className="minor-input" type="text" />
           </div>
 
           <div>
-            <p className="minor-details">Security code</p>
-            <input className="minor-input" type="text" />
+            <p  className="minor-details">Security code</p>
+            <input disabled className="minor-input" type="text" />
           </div>
         </div>
 
@@ -81,7 +83,7 @@ const DeliveryError = () => {
 
 
           <button className="proceed" style={{ marginTop: "137px" }}>
-            Confirm
+            Next
           </button>
       </div>
     </div>
