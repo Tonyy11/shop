@@ -1,5 +1,4 @@
 import "./App.css";
-import Invoice from "./Components/Invoice";
 import DeliveryPayment from "./Components/DeliveryPayment";
 import Shipping from "./Components/Shipping";
 import Cart from "./Components/Cart";
@@ -11,11 +10,12 @@ function App() {
       <div className="App">
         <Routes>
           <Route path="/" exact element={<Cart />} />
-          <Route path="/deliverypayment" element={<DeliveryPayment />} />
-          <Route path="/deliveryerror" element={<DeliveryError />} />
           <Route path="/shipping" element={<Shipping/>} />
-          <Route path="/invoice" element={<Invoice />} />
+          <Route path="/deliverypayment" element={ <DeliveryPayment />} />
+          <Route path="/deliveryerror" element={<DeliveryError />} />
         </Routes>
+        {/* <Post /> */}
+        {/* <DeliveryPayment /> */}
       </div>
   );
 }

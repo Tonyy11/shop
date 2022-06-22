@@ -1,7 +1,6 @@
 import React from "react";
 import "./DeliveryPayment.css";
 import visa from "../Assets/visa.svg";
-import { Link } from "react-router-dom";
 
 const DeliveryError = () => {
   return (
@@ -74,17 +73,16 @@ const DeliveryError = () => {
         </p>
 
         <div className="checkbox-container" style={{ marginTop: "16px" }}>
-          <input type="checkbox" id="cb1" />
+          <input type="checkbox" id="cb1" disabled />
           <label htmlFor="cb1">
             My billing address is same as my shipping addresss.
           </label>
         </div>
 
-        <Link to="/shipping">
+
           <button className="proceed" style={{ marginTop: "137px" }}>
             Confirm
           </button>
-        </Link>
       </div>
     </div>
   );

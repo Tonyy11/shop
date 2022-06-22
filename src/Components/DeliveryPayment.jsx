@@ -1,15 +1,64 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./DeliveryPayment.css";
 import visa from "../Assets/visa.svg";
-import { Link } from "react-router-dom"
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const DeliveryPayment = () => {
-  const [state, setState] = useState(true);
+  const navigate = useNavigate();
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const url = `https://giftshop12.herokuapp.com/credit-card`;
+  const [data, setData] = useState({
+    card_name: "",
+    card_number: "",
+    expiry_date: "",
+    security_code: "",
+    first_name: "",
+    last_name: "",
+    street_Address: "",
+    apt: "",
+    city: "",
+    state: "",
+    zip_code: "",
+    phone_number: "",
+  });
 
-  function onToggle() {
-    setState((prevState) => !prevState);
-  }
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const response = await axios.post(url, {
+      card_name: data.card_name,
+      card_number: data.card_number,
+      expiry_date: data.expiry_date,
+      security_code: data.security_code,
+      first_name: data.first_name,
+      last_name: data.last_name,
+      street_address: data.street_address,
+      apt: data.apt,
+      city: data.city,
+      state: data.state,
+      zip_Code: data.zip_code,
+      phone_number: data.phone_number,
+    });
+    console.log(response);
+    if (response.statusText === "Created") {
+      setIsSubmitted(true);
+    }
+  };
+
+  useEffect(() => {
+    if (isSubmitted) {
+      navigate("/deliveryerror");
+    }
+  },[isSubmitted, navigate]);
+
+
+  const handleChange = (e) => {
+    const newData = { ...data };
+    newData[e.target.id] = e.target.value;
+    setData(newData);
+    console.log(newData);
+  };
 
   return (
     <div>
@@ -26,7 +75,7 @@ const DeliveryPayment = () => {
         <div className="cardtype">
           <div className="left">
             <div className="radio-container">
-              <input type="checkbox" id="rd1" />
+              <input type="checkbox" id="rd1" required />
               <label htmlFor="rd1">Credit card / Debit card</label>
             </div>
           </div>
@@ -34,101 +83,180 @@ const DeliveryPayment = () => {
           <img src={visa} alt="" />
         </div>
 
-        <div className="major-info">
-          <p className="details" style={{ width: "86px" }}>
-            Name on card{" "}
-          </p>
-          <input
-            className="details-input"
-            type="text"
-            placeholder="Aubrey Graham"
-          />
-        </div>
-
-        <div className="major-info">
-          <p className="details" style={{ width: "86px" }}>
-            Card number
-          </p>
-          <input
-            className="details-input"
-            type="text"
-            placeholder="**** **** ***** ****"
-          />
-        </div>
-
-        <div className="minor-info">
-          <div>
-            <p className="minor-details">Expiration date</p>
-            <input className="minor-input" type="text" />
+        <form onSubmit={(e) => handleSubmit(e)}>
+          <div className="major-info">
+            <label className="details" style={{ width: "86px" }}>
+              Name on card
+            </label>
+            <input
+              type="text"
+              required
+              className="details-input"
+              placeholder="Aubrey Graham"
+              id="card_name"
+              value={data.card_name}
+              onChange={(e) => handleChange(e)}
+            />
           </div>
 
-          <div>
-            <p className="minor-details">Security code</p>
-            <input className="minor-input" type="text" />
+          <div className="major-info">
+            <label className="details" style={{ width: "86px" }}>
+              Card number
+            </label>
+            <input
+              type="text"
+              required
+              className="details-input"
+              placeholder="**** **** ***** ****"
+              id="card_number"
+              value={data.card_number}
+              onChange={(e) => handleChange(e)}
+            />
           </div>
-        </div>
 
-        <div className="checkbox-container">
-          <input onClick={onToggle} type="checkbox" id="cb1" defaultChecked />
-          <label htmlFor="cb1">
-            My billing address is same as my shipping addresss.
-          </label>
-        </div>
+          <div className="minor-info" style={{ gap: "30px" }}>
+            <div>
+              <label className="minor-details">Expiration date</label>
+              <input
+                type="text"
+                required
+                className="minor-input"
+                id="expiry_date"
+                value={data.expiry_date}
+                onChange={(e) => handleChange(e)}
+              />
+            </div>
 
-        <div className={`toggled-state ${state ? "hide-toggled-state" : ""}`}>
+            <div>
+              <label className="minor-details">Security code</label>
+              <input
+                type="text"
+                required
+                className="minor-input"
+                id="security_code"
+                value={data.security_code}
+                onChange={(e) => handleChange(e)}
+              />
+            </div>
+          </div>
+
           <p className="greetings" style={{ marginTop: "49px" }}>
             Billing Address
           </p>
 
           <div className="major-info">
-            <p className="details">First name *</p>
-            <input className="details-input" type="text" />
+            <label className="details">First name *</label>
+            <input
+              type="text"
+              required
+              id="first_name"
+              value={data.first_name}
+              onChange={(e) => handleChange(e)}
+              className="details-input"
+            />
           </div>
 
           <div className="major-info">
-            <p className="details">Last name *</p>
-            <input className="details-input" type="text" />
+            <label className="details">Last name *</label>
+            <input
+              type="text"
+              required
+              id="last_name"
+              value={data.last_name}
+              onChange={(e) => handleChange(e)}
+              className="details-input"
+            />
           </div>
 
           <div className="major-info">
-            <p className="details">Street Address *</p>
-            <input className="details-input" type="text" />
+            <label className="details" style={{ width: "103px" }}>
+              Street Address *
+            </label>
+            <input
+              type="text"
+              required
+              id="street_address"
+              value={data.street_address}
+              onChange={(e) => handleChange(e)}
+              className="details-input"
+            />
           </div>
 
           <div className="minor-info">
-            <div>
-              <p className="minor-details">Apt or unit (optional)</p>
-              <input className="minor-input" type="text" />
+            <div className="label-input">
+              <label className="minor-details">Apt or unit (optional)</label>
+              <input
+                type="text"
+                className="minor-input"
+                id="apt"
+                value={data.apt}
+                onChange={(e) => handleChange(e)}
+              />
             </div>
-            <div>
-              <p className="minor-details">City *</p>
-              <input className="minor-input" type="text" />
+
+            <div className="label-input">
+              <label className="minor-details">City *</label>
+              <input
+                type="text"
+                className="minor-input"
+                id="city"
+                value={data.city}
+                onChange={(e) => handleChange(e)}
+              />
             </div>
           </div>
 
-          <div className="minor-info">
-            <div>
-              <p className="minor-details">State *</p>
-              <input className="minor-input" type="text" />
+          <div className="minor-info" style={{ gap: "30px" }}>
+            <div className="label-input">
+              <label className="minor-details">State *</label>
+              <input
+                type="text"
+                id="state"
+                value={data.state}
+                onChange={(e) => handleChange(e)}
+                className="minor-input"
+              />
             </div>
-            <div>
-              <p className="minor-details">Zip code *</p>
-              <input className="minor-input" type="text" />
+
+            <div className="label-input">
+              <label className="minor-details">Zip code *</label>
+              <input
+                type="text"
+                id="zip_code"
+                value={data.zip_code}
+                onChange={(e) => handleChange(e)}
+                className="minor-input"
+              />
             </div>
           </div>
 
           <div className="major-info">
-            <p className="details">Phone number *</p>
-            <input className="details-input" type="text" />
+            <label className="details">Phone number *</label>
+            <input
+              type="number"
+              required
+              id="phone_number"
+              value={data.phone_number}
+              onChange={(e) => handleChange(e)}
+              className="details-input"
+            />
           </div>
+
           <p className="additional-txt">
             We'll contact you in case anything comes up with your order.
           </p>
-        </div>
 
-        <Link to="/deliveryerror">
-          <button className="proceed">Confirm</button>
-        </Link>
+          <button
+            type="submit"
+            name="Submit"
+            value="login"
+            onSubmit={(e) => handleSubmit(e)}
+            className="proceed"
+            disabled={!data}
+          >
+            Save
+          </button>
+        </form>
       </div>
     </div>
   );

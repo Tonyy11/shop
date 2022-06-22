@@ -51,7 +51,7 @@ const Cart = () => {
           </div>
         </div>
 
-        <Link to="/deliverypayment">
+        <Link to="/shipping">
         <button className="proceed">Proceed</button>
         </Link>
       </div>

@@ -17,6 +17,7 @@
         font-weight: 400;
         font-size: 16px;
         padding-top: 61px;
+        text-align: center;
     }
     .bodee{
         padding: 0px 20px 55px 20px;
@@ -50,23 +51,10 @@
         border: 1px solid #8A8A8E;
         box-sizing: border-box;
     }
-    .minor-info{
-        margin: 0;
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-    .minor-details{
-        font-style: normal;
-        font-weight: 700;
-        font-size: 14px;
-        text-align: start;
-    }
     .minor-input{
         border: 1px solid #8A8A8E;
         box-sizing: border-box;
-        width: 166px;
+        width: 160px;
         height: 48px;
     }
     .additional-txt{
