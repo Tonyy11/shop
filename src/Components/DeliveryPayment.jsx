@@ -54,7 +54,7 @@ const DeliveryPayment = () => {
 
 
   const handleChange = (e) => {
-    // e.preventDefault();
+    e.preventDefault();
     const newData = { ...data };
     newData[e.target.id] = e.target.value;
     setData(newData);
@@ -109,6 +109,8 @@ const DeliveryPayment = () => {
               required
               className="details-input"
               placeholder="**** **** ***** ****"
+              pattern="[0-9]{16}"
+              maxlength="16"
               id="card_number"
               value={data.card_number}
               onChange={(e) => handleChange(e)}
@@ -129,10 +131,12 @@ const DeliveryPayment = () => {
             </div>
 
             <div>
-              <label className="minor-details">Security code</label>
+              <label className="minor-details">CVV</label>
               <input
                 type="text"
                 required
+                pattern="[0-9]{3}"
+                maxlength="3"
                 className="minor-input"
                 id="security_code"
                 value={data.security_code}
@@ -234,7 +238,9 @@ const DeliveryPayment = () => {
           <div className="major-info">
             <label className="details">Phone number <span style={{color: "red"}}>*</span></label>
             <input
-              type="number" name="phone" pattern="[0-9]{11}"
+              type="number" 
+              pattern="[0-9]{11}"
+              maxlength="11"
               required
               id="phone_number"
               value={data.phone_number}
