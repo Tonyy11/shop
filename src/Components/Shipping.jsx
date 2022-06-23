@@ -154,7 +154,7 @@ const Shipping = () => {
             <div className="major-info">
               <label className="details">Phone number <span style={{color: "red"}}>*</span></label>
               <input
-                type="tel" name="phone" pattern="[0-9]{11}"
+                type="number" name="phone" pattern="[0-9]{11}"
                 required
                 id="phone_number"
                 value={data.phone_number}

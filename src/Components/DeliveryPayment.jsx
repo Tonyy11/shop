@@ -54,6 +54,7 @@ const DeliveryPayment = () => {
 
 
   const handleChange = (e) => {
+    // e.preventDefault();
     const newData = { ...data };
     newData[e.target.id] = e.target.value;
     setData(newData);
@@ -116,9 +117,9 @@ const DeliveryPayment = () => {
 
           <div className="minor-info" style={{ gap: "30px" }}>
             <div>
-              <label className="minor-details">Expiration date</label>
+              <label for="month" className="minor-details">Expiration date</label>
               <input
-                type="text"
+                type="month"
                 required
                 className="minor-input"
                 id="expiry_date"
@@ -233,7 +234,7 @@ const DeliveryPayment = () => {
           <div className="major-info">
             <label className="details">Phone number <span style={{color: "red"}}>*</span></label>
             <input
-              type="tel" name="phone" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
+              type="number" name="phone" pattern="[0-9]{11}"
               required
               id="phone_number"
               value={data.phone_number}
